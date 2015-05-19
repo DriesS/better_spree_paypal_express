@@ -30,7 +30,6 @@ module Spree
         item[:Amount][:value].zero?
       end
       pp_request = provider.build_set_express_checkout(express_checkout_request_details(order, items))
-      puts pp_request.inspect
       begin
         pp_response = provider.set_express_checkout(pp_request)
         if pp_response.success?
